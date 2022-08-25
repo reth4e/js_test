@@ -1,0 +1,594 @@
+/* ここから全ページ共通部分 */
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro",
+    "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.ptb-m {
+  padding: 80px 0;
+}
+
+.wrap {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  width: 300px;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #cd0224;
+  color: #fff;
+}
+
+.ttl {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    width: 85%;
+  }
+
+
+}
+
+/* ここからheader部分 */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 70px;
+  background-color: #fff;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.header-ttl {
+  font-size: 24px;
+  width: 80px;
+}
+
+.header-nav-list {
+  display: flex;
+  font-weight: bold;
+}
+
+.header-nav-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.menu {
+  display: none;
+}
+
+.drawer-nav {
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+  .header-nav {
+    display: none;
+  }
+
+  .menu {
+    display: inline-block;
+    width: 36px;
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+
+  .menu-line-top,
+  .menu-line-middle,
+  .menu-line-bottom {
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .menu-line-top {
+    top: 0;
+  }
+
+  .menu-line-middle {
+    top: 14px;
+  }
+
+  .menu-line-bottom {
+    bottom: 0;
+  }
+
+  .menu.open span:nth-of-type(1) {
+    top: 14px;
+    transform: rotate(45deg);
+  }
+
+  .menu.open span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .menu.open span:nth-of-type(3) {
+    top: 14px;
+    transform: rotate(-45deg);
+  }
+
+  .drawer-nav {
+    display: block;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    background: #fff;
+    transition: .7s;
+  }
+
+  .in {
+    transform: translateX(100%);
+  }
+
+  .drawer-nav-list {
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .drawer-nav-item {
+    margin-top: 40px;
+    color: #0033cc;
+    font-size: 18px;
+  }
+
+}
+
+/* header部分終了 */
+
+/* ここからお問い合わせ部分 */
+
+.bottom-contact {
+  background-color: #f5f6f9;
+  text-align: center;
+}
+
+.bottom-contact-ttl {
+  margin-bottom: 10px;
+}
+
+.openBtn {
+  cursor: pointer;
+  margin: 40px auto 0;
+  border: none;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.modal__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal__content-inner {
+  background-color: white;
+  height: 750px;
+  width: 700px;
+  text-align: left;
+  padding: 20px;
+}
+
+.modal__closeBtn {
+  text-align: right;
+}
+
+.closeBtn {
+  border: none;
+  background-color: white;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.top-contact-ttl {
+  text-align: center;
+}
+
+.contact-form-item-name {
+  font-weight: bold;
+}
+
+.contact-form-item-input {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.contact-form-item:not(:first-child) {
+  margin-top: 20px;
+}
+
+.contact-form-item-required {
+  color: #cd0224;
+  margin-left: 5px;
+}
+
+.contact-form-item-textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.contact-form-submit {
+  display: block;
+  width: 300px;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .modal__content-inner {
+    width: 90%;
+  }
+}
+
+/* ここまでお問い合わせ部分 */
+
+
+/* スクロールボタン */
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #999;
+  opacity: .8;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* ここからフッター */
+.footer {
+  padding: 20px 0;
+  color: #fff;
+  background-color: #222;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-nav-item:not(:last-of-type):after {
+  content: "|";
+  display: inline-block;
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-copyright {
+    width: 50%;
+    text-align: center;
+  }
+
+  .footer-nav {
+    width: 50%;
+  }
+
+  .footer-nav-item {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .footer-nav-item:not(:last-of-type):after {
+    display: none;
+  }
+}
+
+/* ここまでフッター */
+/* ここまでが全ページ共通部品 */
+
+/* ここからトップページ */
+.top-mv {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  background: url(../img/common/mv.png) center / cover;
+  color: #fff;
+}
+
+.top-mv-main-copy {
+  font-weight: bold;
+  font-size: 50px;
+  text-align: center;
+}
+
+.top-mv-sub-copy {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+.top-feature {
+  background-color: #000;
+  color: #fff;
+}
+
+.top-feature-txt {
+  margin-top: 20px;
+}
+
+
+.top-service-ttl {
+  text-align: center;
+}
+
+.top-service-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top-service-item {
+  width: 49%;
+  margin-top: 20px;
+  margin-right: 2%;
+}
+
+.top-service-item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.top-service-item-ttl {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.top-service-btn {
+  margin: 40px auto 0;
+}
+
+
+.top-blog-ttl {
+  text-align: center;
+}
+
+.top-blog-list {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.top-blog-item {
+  width: 32%;
+  margin-right: 2%;
+}
+
+.top-blog-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.top-blog-item-date {
+  margin-top: 5px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.top-blog-item-ttl {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.top-blog-btn {
+  margin: 40px auto 0;
+}
+
+
+.top-company-list {
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 0;
+}
+
+.top-company-item-link {
+  display: inline-block;
+  background-color: #cd0224;
+  width: 100%;
+  line-height: 10;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  .top-service-item {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .top-blog-item {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ここまでがトップページ */
+
+/* ここから事業内容、社員ブログ、会社概要の共通部分 */
+
+.page-mv {
+  background: url(../img/common/mv.png) center / cover;
+  height: 250px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ここまで事業内容、社員ブログ、会社概要の共通部分 */
+
+/* ここから事業内容のメイン部分 */
+.service-item-img {
+  width: 290px;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid #000;
+  flex-wrap: wrap;
+}
+
+.service-item:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.service-item-detail {
+  width: calc(100% - 330px);
+}
+
+.service-item-ttl {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .service-item-img {
+    width: 100%;
+  }
+
+  .service-item-detail {
+    width: 100%;
+  }
+}
+
+/* ここまで事業内容のメイン部分 */
+
+/* ここからブログのメイン部分 */
+
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.blog-item {
+  width: 32%;
+  margin-right: calc((100% - (32% * 3)) / 2);
+  margin-top: 20px;
+}
+
+.blog-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.blog-item-date {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.blog-item-ttl {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-item {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+/* ここまでブログのメイン部分 */
+
+/* ここから会社概要のメイン部分 */
+.wrap-s {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.company-info {
+  width: 100%;
+  border-bottom: 1px solid #222;
+}
+
+.company-info-name {
+  font-weight: bold;
+  width: 30%;
+}
+
+.company-info-data {
+  width: 70%;
+}
+
+.company-info-name,
+.company-info-data {
+  border-top: 1px solid #000;
+  padding: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap-s {
+    width: 90%;
+  }
+
+
+}
+/* ここまで会社概要のメイン部分 */
